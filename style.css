@@ -41,7 +41,6 @@
     margin: -.25em 0;
     width: 70%;
     height: auto;
-    overflow-x: scroll;
     outline: none;
 }
 .d-none{
