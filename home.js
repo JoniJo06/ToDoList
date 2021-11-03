@@ -94,8 +94,10 @@ function addItem() {
 				editField[i].style.display = 'none';
 				item.style.display = 'block';
 				item.classList.remove('edit');
+				current_tasks[i].classList.remove('d-none');
 			} else {
 				item.classList.add('edit');
+				current_tasks[i].classList.add('d-none');
 				item.style.display = 'none';
 				editField[i].style.display = 'block';
 				editField[i].value = taskName[i].textContent;
