@@ -1,0 +1,42 @@
+/* @format */
+.todo-create-text {
+    display: block;
+    margin: 0 auto;
+}
+#todo-list-text-input-form {
+    display: none;
+}
+
+#add-todo-btn-submit {
+    position: absolute;
+    width: fit-content;
+    top: .9em;
+    left: 15em;
+}
+.todo-list-item{
+    font-size: 2em;
+    width: 75%;
+    margin: 0 auto;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+.modify-item {
+    display: flex;
+}
+#todo-list i {
+    cursor: pointer;
+    margin-right: .5em;
+}
+.color-red {
+    color: red;
+}
+.edit-field {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1em;
+    padding-left: .125em;
+    display: none;
+    margin: -.25em 0;
+}
