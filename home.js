@@ -17,7 +17,6 @@ window.onload = () => {
 	populateList(items, itemsList);
 	handleToDo();
 };
-
 const handleToDo = () => {
 	if (document.querySelector('#todo-list-text-input').value.length === 0) {
 	} else {
@@ -107,14 +106,14 @@ const handleToDo = () => {
 
 document.querySelector('#add-todo-btn-submit').addEventListener('click', handleToDo);
 
-function populateList(todos = [], todoList) {
-	todoList.innerHTML = todos
-		.map((todo, i) => {
+const populateList = (plates = [], plateList) => {
+	plateList.innerHTML = plates
+		.map((plate, i) => {
 			return `
 		<div class="mdl-list__item todo-list-item">
 		<span class="mdl-list__item-primary-content">
-		<i class="far ${todo.done ? 'fa-check-square' : 'fa-square'} fa-square todo-checkbox"></i>
-		<label id="item${i}" class="task-name">${todo.text}</label>
+		<i class="far ${plate.done ? 'fa-check-square' : 'fa-square'} todo-checkbox"></i>
+		<label id="item${i}" class="task-name">${plate.text}</label>
 		<input type="text" class="edit-field"></input>
 		</span>
 		<div class="mdl-list__item-secondary-action edit"><i class="far fa-edit"></i></div>
@@ -123,7 +122,7 @@ function populateList(todos = [], todoList) {
 		`;
 		})
 		.join('');
-}
+};
 
 let showToDoInput = false;
 
@@ -137,4 +136,3 @@ addToDoBtn.addEventListener('click', () => {
 		showToDoInput = true;
 	}
 });
-// change es5 syntax to es6
