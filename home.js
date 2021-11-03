@@ -15,10 +15,10 @@ const items = JSON.parse(localStorage.getItem('items')) || [];
 
 window.onload = () => {
 	populateList(items, itemsList);
-	handleToDos();
+	handleToDo();
 };
 
-const handleToDos = () => {
+const handleToDo = () => {
 	if (document.querySelector('#todo-list-text-input').value.length === 0) {
 	} else {
 		// document.getElementById('todo-list').innerHTML += `
@@ -105,7 +105,7 @@ const handleToDos = () => {
 	}
 };
 
-document.querySelector('#add-todo-btn-submit').addEventListener('click', handleToDos);#
+document.querySelector('#add-todo-btn-submit').addEventListener('click', handleToDo);
 
 function populateList(todos = [], todoList) {
 	todoList.innerHTML = todos
