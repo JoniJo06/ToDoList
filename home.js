@@ -1,16 +1,31 @@
 /**@format */
-
+'use strict';
 const items = JSON.parse(localStorage.getItem('items')) || [];
 const toDoInput = document.querySelector('#todo-list-text-input-form');
 const toDoInputText = document.querySelector('#todo-list-text-input');
+const toDoInputLabel = document.querySelector('#todo-list-label-input');
 const addToDoBtn = document.querySelector('#add-todo-btn');
 const addToDoBtnSubmit = document.querySelector('#add-todo-btn-submit');
 const itemsList = document.querySelector('#todo-list');
 let showToDoInput = false;
 class ToDoList {
 	constructor() {}
+	showToDoBtn() {
+		addToDoBtn.addEventListener('click', () => {
+			if (showToDoInput) {
+				toDoInput.style.display = 'none';
+				toDoInputText.value = '';
+				showToDoInput = false;
+			} else {
+				toDoInput.style.display = 'inline';
+				showToDoInput = true;
+			}
+		});
+	}
 	addToDo() {
 		if (document.querySelector('#todo-list-text-input').value.length === 0) {
+			toDoInputLabel.innerHTML = 'Bitte etwas eintragen ...';
+			toDoInputLabel.style.color = 'red';
 		} else {
 			const text = toDoInputText.value;
 			const item = {
@@ -25,21 +40,10 @@ class ToDoList {
 			toDoInputText.value = '';
 			toDoInput.style.display = 'none';
 			showToDoInput = false;
+			this.showToDoBtn(); //damit das eingabe feld vernünftig geupdated wird
 
 			this.setupToDoList();
 		}
-	}
-	showToDoBtn() {
-		addToDoBtn.addEventListener('click', () => {
-			if (showToDoInput) {
-				toDoInput.style.display = 'none';
-				toDoInputText.value = '';
-				showToDoInput = false;
-			} else {
-				toDoInput.style.display = 'inline';
-				showToDoInput = true;
-			}
-		});
 	}
 	markAsDone() {
 		let checkbox = document.querySelectorAll('.todo-checkbox');
